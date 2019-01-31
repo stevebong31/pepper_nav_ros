@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(pepper_plymouth_ros)
+project(pepper_nav_ros)
 
 # Find all required modules for compilation
 find_package(catkin REQUIRED COMPONENTS

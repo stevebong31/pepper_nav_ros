@@ -1,22 +1,8 @@
-Plymouth's Pepper ROS nodes
+Pepper Navigation ROS nodes
 ===========================
 
 Bringing it up
---------------
 
-- ``export NAO_IP=<pepper IP>``
-- ``ssh nao@<pepper IP>``, then:
-```
-$ nao stop
-$ naoqi-bin --disable-life
-```
-- ``ssh nao@<pepper IP>``, then:
-```
-qicli call ALMotion.wakeUp
-```
-
-Finally:
-```
 roslaunch pepper_bringup pepper_full.launch
 ```
 
@@ -45,7 +31,7 @@ Mapping
 Using `gmapping`:
 
 ```
-$ roslaunch pepper_plymouth_nao mapping.launch
+$ roslaunch pepper_nav_ros mapping.launch
 ```
 
 Localisation
@@ -80,40 +66,12 @@ Navigation
 Both localisation (using `AMCL`) and planning are provided from:
 
 ```
-roslaunch pepper_plymouth_ros nav.launch
+roslaunch pepper_nav_ros nav.launch
 ```
 
 A custom map can be provided:
 
 ```
-roslaunch pepper_plymouth_ros nav.launch map:=<full path to your map.yaml>
-```
-
-3D Perception
--------------
-
-![Registered depth cloud](doc/rgbd_pepper.png)
-
-Until it is officially released, you might need to manually install ``pepper_bringup`` with the perception
-launch file: [get it here](https://github.com/ros-naoqi/pepper_robot/pull/27).
-
-Then it works 'out of the box'.
-
-Building a 3D voxel octomap
----------------------------
-
-![Octomap building with Pepper + ROS](doc/octomap_pepper.png)
-
-You need the 3D perception pipeline up and running. See above.
-
-- First:
-``` 
-$ sudo apt install ros-kinetic-octo*
-```
-
-- then install by hand [octomap_mapping](https://github.com/OctoMap/octomap_mapping)
-- then:
-```
-$ roslaunch pepper_plymouth_ros octomap_mapping.launch
+roslaunch pepper_nav_ros nav.launch map:=<full path to your map.yaml>
 ```
 

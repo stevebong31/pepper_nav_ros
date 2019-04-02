@@ -10,7 +10,7 @@
         <remap from="/scan" to=/pepper_robot/naoqi_driver/laser"/>
 
         <param name="odom_model_type" value="omni" />
-        <param name="base_frame_id" value="base_footprint" />
+        <param name="base_frame_id" value="base_link" />
     </node>
     <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen" clear_params="true">
         <remap from="/scan" to="/pepper_robot/naoqi_driver/laser"/>

@@ -29,5 +29,6 @@
         <rosparam file="$(find pepper_nav_ros)/nav_conf/local_planner.yaml" command="load" ns="TrajectoryPlannerROS" />
         <rosparam file="$(find pepper_nav_ros)/nav_conf/local_planner.yaml" command="load" ns="DWAPlannerROS" />
     </node>
+    <node type="rviz" name="rviz" pkg="rviz" args="-d $(find pepper_nav_ros)/config/pepper.rviz" />
 
 </launch>
